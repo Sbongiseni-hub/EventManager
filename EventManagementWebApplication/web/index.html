@@ -1,16 +1,202 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Management System</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #6c5ce7;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .search-bar {
+      background: #ffffff;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 900px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .search-bar input,
+    .search-bar select {
+      padding: 10px;
+      width: 180px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .search-bar input:focus,
+    .search-bar select:focus {
+      border-color: #6c5ce7;
+    }
+
+    .event-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .event-card {
+      background-color: #ffffff;
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .details {
+      padding: 15px;
+    }
+
+    .details h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #6c5ce7;
+    }
+
+    .details p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .details button {
+      background-color: #6c5ce7;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .details button:hover {
+      background-color: #5a4dcf;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #6c5ce7;
+      color: white;
+      margin-top: 40px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Event Management System</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="login.html">Admin Login</a>
+  </nav>
+</header>
+
+<div class="search-bar">
+  <input type="text" placeholder="Search events...">
+  <select>
+    <option value="">Category</option>
+    <option value="Music">Music</option>
+    <option value="Business">Business</option>
+    <option value="Tech">Tech</option>
+  </select>
+  <input type="date">
+  <input type="submit" value="Search" style="background-color:#6c5ce7; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
+</div>
+
+<div class="event-container">
+  <div class="event-card">
+    <img src="images/event1.jpg" alt="Event 1">
+    <div class="details">
+      <h3>Art & Music Festival</h3>
+      <p>Date: 2025-06-10</p>
+      <p>Location: Central Park</p>
+      <button>View Details</button>
+    </div>
+  </div>
+
+  <div class="event-card">
+    <img src="images/event2.jpg" alt="Event 2">
+    <div class="details">
+      <h3>Tech Innovators 2025</h3>
+      <p>Date: 2025-06-15</p>
+      <p>Location: Innovation Hub</p>
+      <button>View Details</button>
+    </div>
+  </div>
+
+  <div class="event-card">
+    <img src="images/event3.jpg" alt="Event 3">
+    <div class="details">
+      <h3>Startup Pitch Night</h3>
+      <p>Date: 2025-07-01</p>
+      <p>Location: Business Hall</p>
+      <button>View Details</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Event Management System. All rights reserved.
+</footer>
+
+</body>
 </html>
