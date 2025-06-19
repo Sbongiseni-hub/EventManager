@@ -2,23 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Event Management System</title>
+  <title>Welcome | Event Management System</title>
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f0f2f5;
       color: #333;
     }
 
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
     header {
       background-color: #6c5ce7;
       color: white;
-      padding: 20px 40px;
+      padding: 30px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -28,113 +35,71 @@
 
     header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 32px;
     }
 
     nav a {
       color: white;
-      margin-left: 20px;
+      margin-left: 30px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 16px;
       transition: opacity 0.3s;
     }
 
     nav a:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
-    .search-bar {
-      background: #ffffff;
-      margin: 30px auto;
-      padding: 20px;
-      max-width: 900px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    .hero {
+      flex: 1;
       display: flex;
-      gap: 15px;
+      flex-direction: column;
       justify-content: center;
-      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 1.5s ease;
     }
 
-    .search-bar input,
-    .search-bar select {
-      padding: 10px;
-      width: 180px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-      transition: border 0.3s;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .search-bar input:focus,
-    .search-bar select:focus {
-      border-color: #6c5ce7;
-    }
-
-    .event-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .event-card {
-      background-color: #ffffff;
-      width: 280px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-      overflow: hidden;
-      transition: transform 0.2s;
-    }
-
-    .event-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .event-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-
-    .details {
-      padding: 15px;
-    }
-
-    .details h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
+    .hero h2 {
+      font-size: 42px;
       color: #6c5ce7;
+      margin-bottom: 20px;
     }
 
-    .details p {
-      font-size: 14px;
-      margin: 5px 0;
-      color: #555;
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
     }
 
-    .details button {
+    .hero button {
       background-color: #6c5ce7;
       color: white;
-      padding: 10px 15px;
       border: none;
-      border-radius: 8px;
+      padding: 16px 32px;
+      font-size: 18px;
+      border-radius: 12px;
       cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
-    .details button:hover {
-      background-color: #5a4dcf;
+    .hero button:hover {
+      background-color: #5947d4;
     }
 
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background-color: #6c5ce7;
       color: white;
-      margin-top: 40px;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
     }
@@ -150,48 +115,10 @@
   </nav>
 </header>
 
-<div class="search-bar">
-  <input type="text" placeholder="Search events...">
-  <select>
-    <option value="">Category</option>
-    <option value="Music">Music</option>
-    <option value="Business">Business</option>
-    <option value="Tech">Tech</option>
-  </select>
-  <input type="date">
-  <input type="submit" value="Search" style="background-color:#6c5ce7; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
-</div>
-
-<div class="event-container">
-  <div class="event-card">
-    <img src="images/event1.jpg" alt="Event 1">
-    <div class="details">
-      <h3>Art & Music Festival</h3>
-      <p>Date: 2025-06-10</p>
-      <p>Location: Central Park</p>
-      <button>View Details</button>
-    </div>
-  </div>
-
-  <div class="event-card">
-    <img src="images/event2.jpg" alt="Event 2">
-    <div class="details">
-      <h3>Tech Innovators 2025</h3>
-      <p>Date: 2025-06-15</p>
-      <p>Location: Innovation Hub</p>
-      <button>View Details</button>
-    </div>
-  </div>
-
-  <div class="event-card">
-    <img src="images/event3.jpg" alt="Event 3">
-    <div class="details">
-      <h3>Startup Pitch Night</h3>
-      <p>Date: 2025-07-01</p>
-      <p>Location: Business Hall</p>
-      <button>View Details</button>
-    </div>
-  </div>
+<div class="hero">
+  <h2>Welcome to Our Event Management Web App</h2>
+  <p>Plan, discover, and manage events effortlessly. Whether you're organizing or attending, we've got everything you need. Let's get started!</p>
+  <button onclick="window.location.href='startViewServlet.do'">Get Started</button>
 </div>
 
 <footer>
